@@ -1,0 +1,144 @@
+/* ===== Base ===== */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-size: 10px;
+  font-family: Tahoma, Arial, sans-serif;
+}
+
+.center { text-align: center; }
+
+/* ===== Navigation (Menu) ===== */
+nav {
+  width: 100%;
+  background-color: #4d5791;
+  height: 44px;
+  padding: 0 40px;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+        padding: 0 20px;
+        line-height: 44px;
+        font-size: 1.4em;
+        text-decoration: none;
+        color: #fff;
+        margin: 0;
+
+        &:hover {
+          background-color: #fff;
+          color: #4d5791;
+        }
+      }
+    }
+  }
+}
+
+/* ===== Hero (only on Home) ===== */
+.hero {
+  height: 350px;
+  background-color: #b4c6f0;
+  background-image: url('/bg.png');   /* image lives in public/bg.png */
+  background-size: 400px;
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  padding-top: 40px;
+  margin-bottom: 0;                   /* avoid seam above main */
+
+  h1, h2 { text-align: center; margin: 0; }
+  h1 { color: #fff; font-size: 4.2em; margin-bottom: 20px; }
+  h2 { color: #4d5791; }
+}
+
+/* ===== Main & Articles ===== */
+main {
+  padding: 40px;
+  width: 100%;
+  margin: 0;                          /* prevents stray gaps */
+}
+
+main article {
+  display: inline-block;
+  vertical-align: top;                 /* keeps cards aligned, no odd whitespace */
+  width: 100%;
+  max-width: 340px;
+  text-align: justify;
+  margin: 20px;
+}
+
+/* Make chart sections their own full-width rows to avoid big gaps */
+main article.full {
+  display: block;
+  max-width: 760px;                    /* or 100% if you want edge-to-edge */
+  margin: 20px auto;
+}
+
+#myChart,
+#donut-chart {
+  display: block;
+  width: 450px;
+  height: 300px;                       /* reserve space so no huge whitespace */
+  margin: 10px auto;
+}
+
+/* If any <h3> was used as body text, make it look like a paragraph */
+article h3 {
+  font-weight: normal;
+  font-size: 1rem;
+  margin: 0 0 10px;
+}
+
+/* ===== Footer ===== */
+footer {
+  height: 50px;
+  background: #b4c6f0;
+  padding: 40px;
+  margin-top: 0;
+  border-top: 0;
+}
+
+/* Remove any accidental rules that create a “thin line” */
+hr { display: none; }
+
+/* Responsive tweak */
+@media (min-width: 768px) {
+  main article { margin: 10px; }
+}
+
+/* ===== CRA demo classes (optional) ===== */
+.App { text-align: center; }
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+
+  @media (prefers-reduced-motion: no-preference) {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: #fff;
+}
+
+.App-link { color: #61dafb; }
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
